@@ -8,6 +8,8 @@ router = APIRouter()
 
 @router.get("/api/prices")
 async def get_prices():
+    if not database.is_connected:
+        await database.connect()
     query = select([prices]).where(
         prices.c.timestamp > datetime.utcnow() - timedelta(hours=1)
     ).order_by(prices.c.timestamp.desc())

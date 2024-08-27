@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from app.api import endpoints
-from app.database import database
+from app.database import database, connect_with_retry
 from fastapi.staticfiles import StaticFiles
 import logging
 import time
@@ -51,10 +51,10 @@ async def fetch_prices_with_retry(max_retries=5, delay=60):
 
 @app.on_event("startup")
 async def startup():
-    from app.database import init_db, connect_db
+    from app.database import init_db, connect_with_retry
     try:
         init_db()
-        await database.connect()
+        await connect_with_retry()
         asyncio.create_task(fetch_prices_with_retry())
     except Exception as e:
         logging.error(f"Startup failed: {str(e)}")
