@@ -7,6 +7,7 @@ __pycache__/
 venv/
 env/
 .venv/
+myenv/
 
 # IDEとエディタ
 .vscode/
@@ -35,3 +36,4 @@ htmlcov/
 # OS生成ファイル
 .DS_Store
 Thumbs.db
+.vercel

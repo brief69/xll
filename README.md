@@ -1,69 +1,83 @@
 # xll: Universal Value Parameter
 
-xllは、あらゆる通貨（法定通貨、仮想通貨）、株式、コモディティ、商品などの価値を一貫して表現するパラメータです。
+xll is a system that uniformly expresses the value of multiple currencies (fiat and cryptocurrencies). It represents the value of each asset in xll units and allows real-time updates and comparisons.
 
-**ご注意：このプロジェクトは、冗談半分のフィンテックです。金融の世界に一石を投じるようなものではなく、せいぜい経済ニュースを読みながら軽く笑えるくらいのものです。本物の金融に関しては、笑顔の少ない本物の金融アドバイザーに相談しましょう。**
+**Note: This project is a lighthearted fintech initiative. It is not intended to make a significant impact on the financial world, but rather to provide a bit of humor while reading economic news. For serious financial matters, please consult a real financial advisor who may not be as cheerful.**
 
-## プロジェクトの目的
+## Project Purpose
 
-xllの目的は、異なる資産タイプ間の価値比較を一意的に表現し、グローバルな経済活動における価値の表現を統一することです。
+The purpose of xll is to uniquely express value comparisons between different currencies and to unify the representation of value in global economic activities.
 
-## 主な機能
+## Key Features
 
-- リアルタイムの価格データ取得
-- 複数のAPIソースからのデータ集約
-- 異常値検出
-- 履歴データの保存と分析
-- RESTful APIによるデータアクセス
+- Retrieval of price data for multiple currencies (fiat and cryptocurrencies)
+- Calculation and display of xll value
+- Providing the latest data within one hour
+- Returning the last retrieved data if no data is available
+- Data access via RESTful API
 
-## 技術スタック
+## Technology Stack
 
-- Python 3.12+
-- FastAPI
-- SQLAlchemy
-- aiohttp
-- SQLite (開発用)
+- Backend: Python (FastAPI)
+- Database: PostgreSQL
+- Deployment: Vercel
+- Frontend: HTML, JavaScript
 
-## はじめ方
+## Getting Started
 
-1. リポジトリをクローン:
-   ```
+1. Clone the repository:
+
+   ```bash
    git clone https://github.com/your-username/xll.git
    cd xll
    ```
 
-2. 仮想環境を作成しアクティベート:
-   ```
+2. Create and activate a virtual environment:
+
+   ```bash
    python3 -m venv venv
    source venv/bin/activate
    ```
 
-3. 依存パッケージをインストール:
-   ```
+3. Install the required packages:
+
+   ```bash
    pip install -r requirements.txt
    ```
 
-4. 環境変数を設定:
-   `.env`ファイルを作成し、必要なAPI keyを設定してください。
+4. Set up environment variables:
+   Create a `.env` file and set the necessary API keys and database URL.
 
-5. アプリケーションを実行:
-   ```
+5. Run the application locally:
+
+   ```bash
    uvicorn app.main:app --reload
    ```
 
-## 貢献方法
+6. Access the application:
+   Open `http://localhost:8000/static/index.html` in your browser.
 
-1. このリポジトリをフォークしてください。
-2. 新しい機能ブランチを作成してください (`git checkout -b feature/AmazingFeature`)。
-3. 変更をコミットしてください (`git commit -m 'Add some AmazingFeature'`)。
-4. ブランチにプッシュしてください (`git push origin feature/AmazingFeature`)。
-5. プルリクエストを作成してください。
+## Deployment
 
-## お問い合わせ
+The project is deployed using Vercel. The `vercel.json` file in the project root contains the necessary configuration for deployment.
 
-質問や提案がある場合は、以下の方法でお問い合わせください：
+## Scheduled Tasks
 
-1. GitHubのIssueを作成する
-2. GitHubのDiscussionsを使用する
+A maintenance script is scheduled to run periodically using crontab to update the data.
 
-コミュニティの一員として、プロジェクトの改善にご協力いただけることを楽しみにしています。
+## Contribution Guidelines
+
+1. Fork this repository.
+2. Create a new feature branch (`git checkout -b feature/AmazingFeature`).
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
+4. Push to the branch (`git push origin feature/AmazingFeature`).
+5. Create a pull request.
+
+## Contact
+
+If you have any questions or suggestions, please reach out through the following methods:
+
+1. Create a GitHub Issue
+2. Use GitHub Discussions
+
+We look forward to your contributions to improve the project as a member of the community.

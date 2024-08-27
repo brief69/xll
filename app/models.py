@@ -1,13 +1,13 @@
-from sqlalchemy import Table, Column, Integer, String, Float, DateTime
+from sqlalchemy import Table, Column, Integer, String, Float, DateTime, MetaData
 from .database import metadata
-import datetime
 
 prices = Table(
     "prices",
     metadata,
     Column("id", Integer, primary_key=True),
-    Column("asset_type", String(50)),
-    Column("asset_id", String(50)),
+    Column("asset_type", String),
+    Column("asset_id", String),
     Column("price", Float),
-    Column("timestamp", DateTime, default=datetime.datetime.utcnow)
+    Column("xll_value", Float),
+    Column("timestamp", DateTime)
 )
