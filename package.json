@@ -1,0 +1,39 @@
+{
+  "name": "xll-project",
+  "version": "1.0.0",
+  "description": "XLL Data Service",
+  "main": "src/server.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@orbitdb/core": "^2.2.0",
+    "@orbitdb/identity-provider-did": "^1.0.2",
+    "axios": "^1.7.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "helia": "^5.0.0",
+    "ipfs-http-client": "^60.0.1",
+    "key-did-provider-ed25519": "^4.0.2",
+    "key-did-resolver": "^4.0.0",
+    "libp2p": "^2.1.9",
+    "multiformats": "^13.3.0",
+    "orbit-db": "^0.29.0",
+    "orbit-db-identity-provider": "^0.5.0",
+    "uint8arrays": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  },
+  "type": "module"
+}
