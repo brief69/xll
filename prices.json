@@ -1,0 +1,13 @@
+{
+  "timestamp": "2024-10-27T14:38:00.988Z",
+  "prices": {
+    "currency": {
+      "ExchangeRateAPI": 0.1617
+    },
+    "crypto": {
+      "CoinGecko": 152.43,
+      "CryptoCompare": 2,
+      "Binance": 78.5
+    }
+  }
+}
